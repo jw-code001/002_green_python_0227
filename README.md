@@ -1,50 +1,21 @@
-# 아나콘다. 파이썬 설치
+# 깃허브 컨트롤 vscode
 
-1. 기본설정
-2. 아나콘다 설치 (1.1G)
-- 3.13등 최신버전 디폴트는 체크하지 말것
-- [앱 실행 별칭]에서 앱설치 관리자 두개 끔
-- 사용자 path 설정 (시스템환경변수 에서)
-  
-C:\Users\사용자이름\anaconda3
+**1** `git init`현재 폴더를 Git 저장소로 초기화 (최초 1회만)
 
-C:\Users\사용자이름\anaconda3\Scripts
+**2** `git config --global user.name "이름"`사용자 이름 설정 (최초 1회만)  
+       --> git config user.name jw-code001  
+      
 
-C:\Users\사용자이름\anaconda3\Library\bin
+**3** `git config --global user.email "메일"`사용자 이메일 설정 (최초 1회만)  
+--> git config user.email jwgame0804@gmail.com  
 
-conda --version 되는지 확인
 
-# 가상환경 설정
-1 ) python 설치 : conda create -n p310 python=3.10
+**4 `git add .`(중요)** 현재 폴더의 모든 변경 사항을 스테이징(장바구니)에 담기
 
-2 ) python --version
+**5** `git commit -m "메시지"`장바구니에 담긴 파일을 확정(스냅샷 찍기)
 
-3 ) pip install pandas gspread oauth2client plotly matplotlib
+**6 `git remote add origin [URL]`(중요)** 내 컴퓨터와 온라인 깃허브 저장소를 연결
 
-numpy
+**7** `git branch -M main`기본 브랜치 이름을 `main`으로 변경 (최신 깃허브 권장)
 
-pandas : 표 데이터 분석등 작업
-
-plotly : 움직이는 그래프
-
-matplotlib
-
-gspread : 구글 스프레드시트 조종
-
-oauth2client : 구글 시트 접근시의 보안도구
-
-# 설치검증 데이터 구조 예시 (추후 구글 시트 연동 전 테스트용)
-print("축하합니다! 파이썬 엔진과 라이브러리가 완벽하게 연결되었습니다.")
-
-df = pd.DataFrame({'품목': ['셔츠', '바지'], '상태': ['세탁중', '완료']})
-
-print("\n[현재 세탁소 현황]")
-
-print(df)
-
-# 아나콘다 환경 활성화 (p310 환경 기준)
-conda activate p310
-
-# 판다스가 있는지 확인
-pip list | grep pandas
-​
+**8** `git push -u origin main --force `깃허브로 파일 전송 (처음 이후엔 `git push`만)
